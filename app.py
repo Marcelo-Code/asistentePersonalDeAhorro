@@ -317,13 +317,13 @@ with tab3:
             )
             time.sleep(5)  # Add a 5-second delay to avoid exceeding the quota
             return completion.choices[0].message.content
-        except openai.error.AuthenticationError as e:
+        except openai.AuthenticationError as e:
             print(f"OpenAI AuthenticationError: {e}")
             return "Error: OpenAI Authentication failed. Please check your API key."
-        except openai.error.APIConnectionError as e:
+        except openai.APIConnectionError as e:
             print(f"OpenAI APIConnectionError: {e}")
             return "Error: Could not connect to OpenAI API. Please check your internet connection."
-        except openai.error.RateLimitError as e:
+        except openai.RateLimitError as e:
             print(f"OpenAI RateLimitError: {e}")
             return "Error: OpenAI Rate Limit exceeded. Please try again later."
         except Exception as e:
