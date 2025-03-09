@@ -7,9 +7,11 @@ import time
 import time
 import openai
 import streamlit as st
+import os
 
 # Configure OpenAI API
 openai.api_key = st.secrets["openai"]["api_key"]
+os.environ["OPENAI_PROJECT"] = "proj_1tlhqUsFyJZnqbK0d6f6odVD"
 
 # Page configuration
 st.set_page_config(
