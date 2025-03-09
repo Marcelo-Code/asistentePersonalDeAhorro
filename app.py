@@ -313,7 +313,7 @@ with tab3:
         Each strategy should be concise and actionable.
         """
         try:
-            client = openai.OpenAI()
+            client = openai.OpenAI(api_key=st.secrets["openai"]["api_key"])
             completion = client.chat.completions.create(
                 model="gpt-3.5-turbo",
                 messages=[{"role": "user", "content": prompt}]
