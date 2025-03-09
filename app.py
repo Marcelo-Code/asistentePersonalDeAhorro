@@ -4,11 +4,16 @@ import json
 import matplotlib.pyplot as plt
 import requests
 import time
+import os
+import time
 import openai
-import streamlit as st
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Configure OpenAI API
-openai.api_key = st.secrets["openai"]["api_key"]
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # Page configuration
 st.set_page_config(
