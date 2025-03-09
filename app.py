@@ -296,10 +296,6 @@ with tab2:
         st.write("No expenses added yet.")
 
 with tab3:
-    # Savings Strategies Section
-    st.header(t["savings_strategies"])
-
-    generate_strategy = st.button("Generate Savings Strategy")
 
     # Function to generate savings strategies using OpenAI
     def generate_savings_strategies_gemini(income, expenses, savings_goal, language):
@@ -338,10 +334,7 @@ with tab3:
         strategies = []
         # Call Gemini to generate savings strategies
         print("Expenses by category:", expenses_by_category)
-        if expenses_by_category and generate_strategy:
-            gemini_strategies = generate_savings_strategies_gemini(income, sum(expenses_by_category.values()), savings_goal, language)
-        else:
-            gemini_strategies = "No specific savings strategies could be determined based on your current expenses. Consider tracking your expenses more closely to identify potential areas for savings."
+        gemini_strategies = generate_savings_strategies_gemini(income, sum(expenses_by_category.values()), savings_goal, language)
         strategies.append(gemini_strategies)
         return strategies
 
