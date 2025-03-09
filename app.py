@@ -330,10 +330,10 @@ with tab3:
             return "Error: Could not connect to OpenAI API. Please check your internet connection."
         except openai.RateLimitError as e:
             print(f"OpenAI RateLimitError: {e}")
-            return "Error: OpenAI Rate Limit exceeded. Please try again later."
+            return f"Error: OpenAI Rate Limit exceeded. {e}"
         except Exception as e:
             print(f"Error generating content: {e}")
-            return "Error generating content. Please try again later."
+            return f"Error generating content: {e}. {type(e).__name__}: {str(e)}"
 
     # Modify get_savings_strategies function to use Gemini
     def get_savings_strategies(income, expenses_by_category, savings_goal, language):
