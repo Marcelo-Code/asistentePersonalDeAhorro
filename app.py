@@ -331,7 +331,7 @@ with tab3:
             return "Error: OpenAI Rate Limit exceeded. Please try again later."
         except Exception as e:
             print(f"Error generating content: {e}")
-            return f"Error generating content: {e}. Please check the logs for more details and try again later."
+            return "Error generating content. Please try again later."
 
     # Modify get_savings_strategies function to use Gemini
     def get_savings_strategies(income, expenses_by_category, savings_goal, language):
