@@ -315,6 +315,8 @@ with tab3:
                 model="gpt-3.5-turbo",
                 messages=[{"role": "user", "content": prompt}]
             )
+            print(f"OpenAI API Key: {openai.api_key}")
+            print(f"OpenAI API Response: {completion}")
             time.sleep(5)  # Add a 5-second delay to avoid exceeding the quota
             return completion.choices[0].message.content
         except openai.AuthenticationError as e:
